@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%;">
+  <head>
+    <meta charset="utf-8">
+    <title>CheerpX Hello World</title>
+    <script src="https://cheerpxdemos.leaningtech.com/publicdeploy/cx.js"></script>
+  </head>
+  <body style="margin:0;height:100%;">
+    <pre id="console" style="width:100%;height:100%;margin:0;">
+    </pre>
+    <script>
+      async function cxReady(cx)
+      {
+        cx.setConsole(document.getElementById("console"));
+        cx.run("/hello", []);
+      }
+      function cxFailed(e)
+      {
+         console.log("CheerpX could not start. Reason: "+e);
+      }
+      CheerpXApp.create().then(cxReady, cxFailed);
+    </script>
+  </body>
+</html>
+
